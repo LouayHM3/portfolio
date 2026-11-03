@@ -1,5 +1,14 @@
 "use client"
 import { ArrowDown, Github, Linkedin, Mail } from "lucide-react"
+import {
+  Dialog,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog"
 import { TraceField } from "./trace-field"
 import { Scope } from "./scope"
 import { TiltChip } from "./tilt-chip"
@@ -64,7 +73,39 @@ export function Hero() {
             <a href="#work" className="group inline-flex items-center gap-3 bg-signal px-6 py-4 font-mono text-xs font-semibold uppercase tracking-[.14em] text-on-signal transition-transform hover:-translate-y-0.5">
               Selected work <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-1" />
             </a>
-            <a href="/Omar_Alibi_Resume.pdf" download className="border border-silk/60 px-6 py-4 font-mono text-xs uppercase tracking-[.14em] transition-colors hover:border-signal hover:text-signal">Download résumé</a>
+            <Dialog>
+              <DialogTrigger asChild>
+                <button type="button" className="border border-silk/60 px-6 py-4 font-mono text-xs uppercase tracking-[.14em] transition-colors hover:border-signal hover:text-signal">Download résumé</button>
+              </DialogTrigger>
+              <DialogContent className="border-border bg-sub-2 text-silk sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="font-mono text-base uppercase tracking-[.12em]">Select résumé language</DialogTitle>
+                  <DialogDescription className="font-mono text-xs leading-relaxed text-dim">
+                    Choose the version you would like to download.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="grid gap-3 pt-2 sm:grid-cols-2">
+                  <DialogClose asChild>
+                    <a
+                      href="/Omar_Alibi_Resume.pdf"
+                      download
+                      className="border border-border px-4 py-4 text-left font-mono text-xs uppercase tracking-[.14em] transition-colors hover:border-signal hover:text-signal"
+                    >
+                      English
+                    </a>
+                  </DialogClose>
+                  <DialogClose asChild>
+                    <a
+                      href="/Omar_ALIBI_CV.pdf"
+                      download
+                      className="border border-border px-4 py-4 text-left font-mono text-xs uppercase tracking-[.14em] transition-colors hover:border-signal hover:text-signal"
+                    >
+                      Français
+                    </a>
+                  </DialogClose>
+                </div>
+              </DialogContent>
+            </Dialog>
             <span className="mx-1 hidden h-6 w-px bg-border sm:block" />
             {socials.map(({ icon: I, href, label }) => (
               <a key={label} href={href} target="_blank" rel="noopener" aria-label={label} className="grid h-12 w-12 place-items-center border border-border transition-colors hover:border-signal hover:text-signal"><I className="h-4 w-4" /></a>
