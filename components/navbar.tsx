@@ -1,15 +1,15 @@
 "use client"
-import { useVisitorLocation } from "@/components/board/use-visitor-location"
+import { useVisitorClock } from "@/components/board/use-visitor-clock"
 
 const links = [["Profile", "#profile"], ["Work", "#projects-section"], ["Contact", "#contact"]]
 
 export function Navbar() {
-  const { time, zone, city } = useVisitorLocation()
+  const { time } = useVisitorClock()
   return (
     <nav className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 md:px-12 mix-blend-difference text-white">
       <a href="#top" className="text-lg font-semibold tracking-tight">OA<sup className="text-[10px]">®</sup></a>
       <span className="mono-label hidden !text-white/70 sm:block" suppressHydrationWarning>
-        {city && <>{city} </>}{time}{zone && <> {zone}</>}
+        {time}
       </span>
       <ul className="flex gap-6 text-sm">
         {links.map(([l, h], i) => (

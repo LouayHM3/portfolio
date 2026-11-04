@@ -4,14 +4,8 @@ import data from "@/data/projects-data.json"
 
 const projectCount = (data as any).engineer.projects.length
 
-const where = () => {
-  try {
-    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone || ""
-    return tz.includes("/") ? tz.split("/").pop()!.replace(/_/g, " ") : "Earth"
-  } catch { return "Earth" }
-}
-const makeLines = (place: string) => [
-  `OA-BIOS v2026.09  ·  ${place}`,
+const makeLines = () => [
+  "OA-BIOS v2026.09",
   "POST ........ RAM 512K ........ OK",
   "MOUNT /profile ................. OK",
   `MOUNT /work (${projectCount} projects) ..... OK`,
@@ -19,13 +13,13 @@ const makeLines = (place: string) => [
 ]
 
 export function Boot() {
-  const [lines, setLines] = useState(() => makeLines("..."))
+  const [lines, setLines] = useState(() => makeLines())
   const [n, setN] = useState(0)
   const [gone, setGone] = useState(false)
   const [out, setOut] = useState(false)
 
   useEffect(() => {
-    const L = makeLines(where())
+    const L = makeLines()
     setLines(L)
     const finish = () => { document.documentElement.setAttribute("data-booted", "1"); document.documentElement.classList.add("probe") }
     const skip = () => { setOut(true); finish(); setN(L.length); try { sessionStorage.setItem("oa-booted", "1") } catch {} }

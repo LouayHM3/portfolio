@@ -12,7 +12,7 @@ import {
 import { TraceField } from "./trace-field"
 import { Scope } from "./scope"
 import { TiltChip } from "./tilt-chip"
-import { useVisitorLocation } from "./use-visitor-location"
+import { useVisitorClock } from "./use-visitor-clock"
 
 const socials = [
   { icon: Github, href: "https://github.com/alibiomar", label: "GitHub" },
@@ -21,7 +21,7 @@ const socials = [
 ]
 
 export function Hero() {
-  const { time, zone, city, coords } = useVisitorLocation()
+  const { time } = useVisitorClock()
 
   return (
     <section id="top" className="relative min-h-[100svh] overflow-hidden">
@@ -34,7 +34,7 @@ export function Hero() {
         <div className="rv flex flex-wrap items-center justify-between gap-x-8 gap-y-2" style={{ ["--d" as any]: "0s" }}>
           <p className="silk">Board <span className="silk-w">OA-2026</span> · Rev A · 4-layer</p>
           <p className="silk hidden sm:block" suppressHydrationWarning>
-            {coords && <>{coords} · </>}{city && <>{city} </>}<span className="silk-w tabular-nums">{time}</span>{zone && <> {zone}</>}
+            <span className="silk-w tabular-nums">{time}</span>
           </p>
         </div>
 
