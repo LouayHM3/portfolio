@@ -64,6 +64,7 @@ body {
 }
 ::-webkit-scrollbar { display:none; }
 ::selection { background:var(--signal); color:#0b0f0d; }
+ :focus-visible { outline:2px solid var(--signal); outline-offset:3px; }
 
 /* ───────── silkscreen typography ───────── */
 .silk { font-family:var(--font-mono); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; color:var(--dim); }

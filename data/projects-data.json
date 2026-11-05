@@ -1,7 +1,7 @@
 {
   "engineer": {
     "sectionTitle": "Technical Projects & Experience",
-    "description": "Electrical Engineering student with expertise in IoT systems, embedded electronics, web development, and industrial automation. Experienced in both academic research and professional internship projects.",
+    "description": "Electrical Engineering graduate documenting IoT systems, embedded electronics, software development and industrial automation work across academic and internship projects.",
     "projects": [
       {
         "title": "Industrial Energy Monitoring Platform - End-of-Studies Project in Malta",
@@ -227,6 +227,7 @@
         "image": "/projects/engineer/imu-sensor-data-fusion-stm32-kalman.jpg",
         "featured": true,
         "company": "ENIT - Academic Project (PFA2)",
+        "link": "https://github.com/alibiomar/STM32_3D_Dashboard",
         "technicalDetails": [
           "Advanced Kalman Filter implementation for sensor fusion",
           "STM32 embedded platform optimization",
@@ -253,6 +254,7 @@
         "image": "/projects/engineer/iot-dashboard-industrial-machines-monitoring.jpg",
         "featured": true,
         "company": "ENIT - Academic Project",
+        "link":"https://github.com/alibiomar/IoT-Dashboard-desktop-app",
         "technicalDetails": [
           "Real-time data acquisition from industrial machines",
           "Web-based visualization interface with responsive design",

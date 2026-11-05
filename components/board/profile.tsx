@@ -8,12 +8,19 @@ import data from "@/data/projects-data.json"
 gsap.registerPlugin(ScrollTrigger)
 
 const eng = (data as any).engineer
-const banks: { title: string; items: string[] }[] = Object.values(eng.skills as Record<string, { title: string; description: string }>)
-  .map((s) => ({ title: s.title, items: s.description.split(",").map((x) => x.trim()) }))
+const banks: { title: string; items: string[] }[] = [
+  { title: "Programming languages", items: ["C", "C++", "Python", "Dart", "JavaScript", "SQL", "Rust", "VHDL"] },
+  { title: "Embedded systems", items: ["STM32", "ESP8266", "ESP32", "nRF52", "Arduino", "FreeRTOS", "Raspberry Pi", "Jetson Nano"] },
+  { title: "Electronics & hardware", items: ["PCB design", "Eagle", "Altium Designer", "PSpice", "LTspice", "PSIM", "Cadence", "Vivado"] },
+  { title: "Industrial protocols", items: ["M-Bus", "MQTT", "Modbus", "UART", "SPI", "I2C", "CAN", "HTTP/HTTPS"] },
+  { title: "Software development", items: ["React", "Next.js", "Node.js", "Flutter", "Firebase", "ThingsBoard", "Grafana", "Node-RED"] },
+  { title: "Testing & debugging", items: ["Nordic PPK2", "SEGGER J-Link", "Serial diagnostics", "QuestaSim", "ModelSim", "MATLAB"] },
+  { title: "Development tools", items: ["Git", "GitHub", "Docker", "Linux", "STM32CubeIDE", "STM32CubeMX", "xPack RISC-V"] },
+]
 const pinCount = banks.reduce((a, b) => a + b.items.length, 0)
 const projectCount = eng.projects.length
 
-const statement = "I design the hardware, write the firmware and ship the cloud dashboard. Real-time control, edge AI and industrial IoT, taken from schematic to production."
+const statement = "I work across hardware prototypes, embedded firmware, test tooling and industrial IoT dashboards. This portfolio separates implemented work, prototypes and confidential scope."
 
 const education = [
   { addr: "0x2026", name: "Electrical Engineering", org: "National Engineering School of Tunis (ENIT)", span: "2023 – 2026", status: "Graduated", logo: true },
@@ -21,9 +28,9 @@ const education = [
   { addr: "0x2021", name: "Baccalauréat, Technical Sciences", org: "Grade 17.43 / 20", span: "2021", status: "" },
 ]
 const internships = [
-  { when: "2026", role: "Engineering Intern (PFE)", org: "IoT Solutions Ltd · Malta", note: "Industrial IoT energy monitoring", tag: "Final-year project", logo: "/logos/iotsolutions.png", w: 250, h: 252, invert: false },
-  { when: "2025", role: "Engineering Intern", org: "OnWireWay", note: "IoT firmware & mobile app", tag: "", logo: "/logos/onwireway.png", w: 100, h: 284, invert: false },
-  { when: "2024", role: "Technical Intern", org: "STEG", note: "Power systems observation & industrial operations", tag: "", logo: "/logos/steg.png", w: 128, h: 284, invert: false },
+  { when: "2026", role: "End-of-Studies Engineering Intern", org: "IoT Solutions Ltd · Malta", note: "Industrial IoT energy monitoring", tag: "Final-year project", logo: "/logos/iotsolutions.png", w: 250, h: 252, invert: false },
+  { when: "2025", role: "Embedded & IoT Engineering Intern", org: "OnWireWay", note: "IoT firmware & mobile app", tag: "", logo: "/logos/onwireway.png", w: 100, h: 284, invert: false },
+  { when: "2024", role: "Technical Intern, Power Systems", org: "STEG", note: "Power systems observation & industrial operations", tag: "", logo: "/logos/steg.png", w: 128, h: 284, invert: false },
 ]
 const languages = [
   { name: "Arabic", level: "Native" },
@@ -54,7 +61,7 @@ function Diagram({ active }: { active: number }) {
       {/* bus */}
       <line x1="195" y1="16" x2="195" y2="484" stroke="var(--trace)" strokeWidth="6" />
       <line x1="195" y1="16" x2="195" y2="484" stroke="var(--gold)" strokeOpacity=".35" strokeWidth="1" strokeDasharray="2 8" />
-      <text x="195" y="498" textAnchor="middle" className="fill-dim" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="1.5">AXI4-LITE BUS</text>
+      <text x="195" y="498" textAnchor="middle" className="fill-dim" fontSize="8" fontFamily="var(--font-mono)" letterSpacing="1.5">AXI4-Lite BUS</text>
       {/* travelling token */}
       <g style={{ transform: `translateY(${Y[active]}px)`, transition: "transform .8s cubic-bezier(.7,0,.2,1)" }}>
         <circle cx="195" cy="0" r="13" fill="var(--signal)" fillOpacity=".18" />
@@ -137,7 +144,7 @@ export function Profile() {
 
           <div className="min-w-0 space-y-24 lg:space-y-56">
             {/* U1 — CORE */}
-            <article {...reg(0)}>
+            <article id="profile" {...reg(0)}>
               <Head i={0} />
               <p ref={words} className="text-[clamp(1.9rem,3.9vw,3.8rem)] font-medium leading-[1.06] tracking-[-0.04em]">
                 {statement.split(" ").map((w, i) => <span key={i}>{w} </span>)}
@@ -153,7 +160,7 @@ export function Profile() {
             </article>
 
             {/* U2 — I/O : skills */}
-            <article {...reg(1)}>
+            <article id="skills" {...reg(1)}>
               <Head i={1} />
               <div className="space-y-12">
                 {banks.map((b, bi) => (
@@ -173,7 +180,7 @@ export function Profile() {
             </article>
 
             {/* U3 — MEMORY : education */}
-            <article {...reg(2)}>
+            <article id="education" {...reg(2)}>
               <Head i={2} />
               <div className="border-y border-silk">
                 <div className="hidden grid-cols-[6rem_1fr_9rem] gap-6 border-b border-border py-3 md:grid">
@@ -199,13 +206,13 @@ export function Profile() {
             </article>
 
             {/* U4 — LOG : internships */}
-            <article {...reg(3)}>
+            <article id="experience" {...reg(3)}>
               <Head i={3} />
               <ul className="space-y-5">
                 {internships.map((x, i) => (
                   <li key={x.org} className="sr bracket grid overflow-hidden border border-border bg-sub-2 md:grid-cols-[14rem_1fr]" style={{ ["--d" as any]: `${i * 0.08}s` }}>
                     {/* logo tile: light "label" so every logo reads, whatever its colours */}
-                    <div className="grid h-28 place-items-center bg-[#f3f2ee] p-5 md:h-auto md:min-h-[8.5rem]">
+                    <div className="grid h-28 place-items-center p-5 md:h-auto md:min-h-[8.5rem]">
                       <Image src={x.logo} alt={`${x.org} logo`} width={x.w} height={x.h}
                         className={`h-auto w-auto max-h-[4.5rem] max-w-full object-contain ${x.invert ? "brightness-0" : ""}`} />
                     </div>

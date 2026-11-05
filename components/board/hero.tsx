@@ -62,11 +62,11 @@ export function Hero() {
         <div className="rv grid gap-8 lg:grid-cols-[1fr_auto] lg:items-end" style={{ ["--d" as any]: ".35s" }}>
           <div>
             <p className="text-[clamp(1.6rem,3vw,2.7rem)] font-medium leading-[1.05] tracking-[-0.035em]">
-              From bare metal to cloud<span className="text-signal">.</span>
+              Embedded systems, firmware, hardware prototypes and industrial IoT<span className="text-signal">.</span>
             </p>
             <div className="mt-4 flex flex-wrap items-center gap-x-8 gap-y-3">
               <p className="silk flex items-start gap-2"><i className="led mt-[3px] shrink-0" /><span>ENIT · Electrical Engineering · 2023–2026 · <span className="silk-w">Graduated</span></span></p>
-              <p className="silk flex items-start gap-2"><i className="led o mt-[3px]" /> <span className="silk-o">Open to work · Embedded / Firmware / IoT<br /><span className="!text-dim">Relocation or remote · Tunisia / Europe</span></span></p>
+              <p className="silk flex items-start gap-2"><i className="led o mt-[3px]" /> <span className="silk-o">Open to work · Embedded / Firmware / IoT<br /><span className="!text-dim">Tunisia · Europe · Remote</span></span></p>
             </div>
           </div>
           <div className="flex flex-wrap items-center gap-3">

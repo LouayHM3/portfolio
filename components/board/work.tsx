@@ -12,6 +12,7 @@ const projects: Project[] = (data as any).engineer.projects
 
 const split = (t: string) => { const [a, ...b] = t.split(" - "); return { main: a, sub: b.join(" - ") } }
 const ref = (i: number) => `U${i + 1}`
+const isPfe = (project: Project) => project.title.startsWith("Industrial Energy Monitoring Platform")
 
 export function Work() {
   const [open, setOpen] = useState<number | null>(null)
@@ -136,10 +137,42 @@ export function Work() {
                   {split(p.title).sub && <p className="mt-2 text-dim">{split(p.title).sub}</p>}
                 </div>
                 <section><h4 className="silk silk-o mb-3">01 · Description</h4><p className="leading-relaxed text-silk/85">{p.description}</p></section>
-                {p.impact && <section><h4 className="silk silk-o mb-3">02 · Measured result</h4><p className="border-l-2 border-signal pl-4 font-mono text-sm uppercase tracking-[.08em] text-signal">{p.impact}</p></section>}
+                {p.impact && <section><h4 className="silk silk-o mb-3">02 · Evidence / status</h4><p className="border-l-2 border-signal pl-4 font-mono text-sm uppercase tracking-[.08em] text-signal">{p.impact}</p></section>}
+                {isPfe(p) && (
+                  <div className="space-y-8 border-y border-border py-8">
+                    <section>
+                      <h4 className="silk silk-o mb-3">03 · Engineering case study</h4>
+                      <p className="leading-relaxed text-silk/85">The PFE connected four related workstreams: an energy-monitoring workspace, an interpretable machine-state detection pipeline, an M-Bus meter-reader prototype, and an end-of-line testing application. The work is presented at prototype and demonstrator level; production hardware and firmware are confidential and excluded.</p>
+                    </section>
+                    <section>
+                      <h4 className="silk silk-o mb-3">04 · Detection pipeline</h4>
+                      <ol className="space-y-2 font-mono text-xs leading-relaxed text-dim">
+                        <li><span className="text-gold">01</span> Moving average to reduce short-term noise.</li>
+                        <li><span className="text-gold">02</span> IQR filtering to reject outliers.</li>
+                        <li><span className="text-gold">03</span> MAD-based gap scoring to separate operating regions.</li>
+                        <li><span className="text-gold">04</span> Median filtering and transition persistence to avoid unstable state changes.</li>
+                        <li><span className="text-gold">05</span> State classification and idle-energy / cost estimation using per-asset thresholds.</li>
+                      </ol>
+                    </section>
+                    <section className="grid gap-6 sm:grid-cols-2">
+                      <div>
+                        <h4 className="silk silk-o mb-3">05 · Hardware flow</h4>
+                        <p className="text-sm leading-relaxed text-silk/85">nRF52832 prototype → M-Bus master → Hydrus meter discovery and polling → data decoding → flash persistence. The supply prototype used a TPS55340 boost stage with TX voltage modulation and RX current sensing.</p>
+                      </div>
+                      <div>
+                        <h4 className="silk silk-o mb-3">06 · Test workflow</h4>
+                        <p className="text-sm leading-relaxed text-silk/85">A modular Python / PySide6 application coordinates worker objects with QThread, Nordic PPK2 current profiling, SEGGER J-Link flashing, serial diagnostics, boot-version reading, QR-code workflows and run-specific failure logs.</p>
+                      </div>
+                    </section>
+                    <section>
+                      <h4 className="silk silk-o mb-3">07 · Limitations</h4>
+                      <p className="text-sm leading-relaxed text-dim">Threshold behavior depends on the monitored asset and input data. The method is not presented with an accuracy claim or formal qualification result. The tester is not described as fully asynchronous or production-hardened, and confidential production artifacts are not published.</p>
+                    </section>
+                  </div>
+                )}
                 {p.technicalDetails && (
                   <section>
-                    <h4 className="silk silk-o mb-3">02 · Features</h4>
+                    <h4 className="silk silk-o mb-3">{isPfe(p) ? "08" : "03"} · Implementation details</h4>
                     <ol className="border-t border-border">
                       {p.technicalDetails.map((d, k) => (
                         <li key={k} className="grid grid-cols-[2.5rem_1fr] gap-3 border-b border-border py-3 text-[15px]"><span className="font-mono text-gold">{String(k + 1).padStart(2, "0")}</span><span className="text-silk/85">{d}</span></li>
@@ -148,7 +181,7 @@ export function Work() {
                   </section>
                 )}
                 <section>
-                  <h4 className="silk silk-o mb-3">03 · Stack</h4>
+                  <h4 className="silk silk-o mb-3">{isPfe(p) ? "09" : "04"} · Stack</h4>
                   <ul className="flex flex-wrap gap-2">{p.technologies.map((t) => <li key={t} className="pin"><i className="pad" /><span className="text-silk">{t}</span></li>)}</ul>
                 </section>
                 {p.link && <a href={p.link} target="_blank" rel="noopener" className="inline-flex items-center gap-2 bg-signal px-6 py-4 font-mono text-xs font-semibold uppercase tracking-[.14em] text-on-signal"><Github className="h-4 w-4" /> View source <ArrowUpRight className="h-4 w-4" /></a>}
