@@ -5,11 +5,11 @@ import data from "@/data/projects-data.json"
 const projectCount = (data as any).engineer.projects.length
 
 const makeLines = () => [
-  "OA-BIOS v2026.09",
+  "LH-BIOS v2026.09",
   "POST ........ RAM 512K ........ OK",
   "MOUNT /profile ................. OK",
   `MOUNT /work (${projectCount} projects) ..... OK`,
-  "LINK  contact@omar.alibi ....... OK",
+  "LINK  louay.hammoudi@enit ....... OK",
 ]
 
 export function Boot() {
@@ -37,6 +37,7 @@ export function Boot() {
   }, [])
 
   if (gone) return null
+
   return (
     <div role="button" tabIndex={0} aria-label="Skip intro" onClick={() => { setOut(true); setN(lines.length); try { sessionStorage.setItem("oa-booted", "1") } catch {} }} aria-hidden className="fixed inset-0 z-[10000] flex cursor-pointer flex-col justify-end bg-sub p-6 transition-transform duration-[900ms] ease-[cubic-bezier(.76,0,.24,1)] md:p-12"
       style={{ transform: out ? "translateY(-100%)" : "none" }}>

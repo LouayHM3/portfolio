@@ -129,10 +129,10 @@ Sent on: ${new Date().toLocaleString()}
           
           <p>If you have any urgent questions, feel free to call me at (+216) 20 261 004.</p>
           
-          <p>Best regards,<br>Omar Alibi</p>
+          <p>Best regards,<br>Louay Hammoudi</p>
           
           <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; font-size: 12px; color: #666;">
-            <p>This is an automated confirmation email from omaralibi.tn</p>
+            <p>This is an automated confirmation email from Louay Hammoudi's portfolio</p>
           </div>
         </div>
       </div>
@@ -141,7 +141,7 @@ Sent on: ${new Date().toLocaleString()}
     await transporter.sendMail({
       from: process.env.GMAIL_USER,
       to: validatedData.email,
-      subject: `Thank you for contacting Omar Alibi - ${validatedData.subject}`,
+      subject: `Thank you for contacting Louay Hammoudi - ${validatedData.subject}`,
       html: confirmationHTML,
     })
 

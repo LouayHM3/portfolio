@@ -33,7 +33,7 @@ export function Rail() {
     <>
       <nav data-on-signal={act === 3 ? "" : undefined} className="fixed inset-x-0 top-0 z-50 flex items-center justify-between px-6 py-5 pb-8 md:px-14" aria-label="Primary">
         <div className={`pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-sub via-sub/90 to-transparent transition-opacity ${act === 3 ? "opacity-0" : ""}`} />
-        <a href="#top" className="font-mono text-sm font-semibold tracking-tight">OA<sup className="text-[9px] text-signal">®</sup></a>
+        <a href="#top" className="font-mono text-sm font-semibold tracking-tight">LH<sup className="text-[9px] text-signal">®</sup></a>
         <ul className="flex items-center gap-1 sm:gap-2">
           {stops.slice(1).map((s, i) => (
             <li key={s.id}>

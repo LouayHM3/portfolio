@@ -4,9 +4,7 @@ import { useRef, type ReactNode } from "react"
 const MAX = 9 // max tilt in degrees
 
 /**
- * The IC package. Wherever the pointer is, that part of the chip is pressed
- * back into the board, so the opposite side lifts toward you. A soft sheen
- * follows the pointer. Touch input and reduced-motion users get a static chip.
+ * A floating identity panel with subtle pointer-responsive depth and sheen.
  */
 export function TiltChip({ children, className = "" }: { children: ReactNode; className?: string }) {
   const ref = useRef<HTMLDivElement>(null)
@@ -43,7 +41,7 @@ export function TiltChip({ children, className = "" }: { children: ReactNode; cl
 
   return (
     <div className="tilt-stage mx-auto w-full max-w-[1240px]">
-      <div ref={ref} onPointerMove={move} onPointerLeave={leave} className={`ic tilt ${className}`}>
+      <div ref={ref} onPointerMove={move} onPointerLeave={leave} className={`system-panel tilt ${className}`}>
         <span aria-hidden className="tilt-sheen" />
         {children}
       </div>

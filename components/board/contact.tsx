@@ -45,13 +45,13 @@ export function Contact() {
 
         <div className="grid gap-16 lg:grid-cols-[1.15fr_1fr]">
           <div>
-            <a href="mailto:alibiomar3@gmail.com" data-hot className="display group block text-[clamp(3rem,8.6vw,9.5rem)]">
+            <a href="mailto:louay.hammoudi@etudiant-enit.utm.tn" data-hot className="display group block text-[clamp(3rem,8.6vw,9.5rem)]">
               Let’s<br />build<br />something<span className="inline-block transition-transform duration-500 group-hover:translate-x-3 group-hover:-translate-y-3">↗</span>
             </a>
             <div className="mt-12 flex flex-wrap items-center gap-6 font-mono text-xs uppercase tracking-[.14em]">
-              <a href="mailto:alibiomar3@gmail.com" className="underline underline-offset-4">alibiomar3@gmail.com</a>
-              <a href="https://github.com/alibiomar" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:underline"><Github className="h-4 w-4" /> GitHub</a>
-              <a href="https://linkedin.com/in/omar-alibi" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:underline"><Linkedin className="h-4 w-4" /> LinkedIn</a>
+              <a href="mailto:louay.hammoudi@etudiant-enit.utm.tn" className="underline underline-offset-4">louay.hammoudi@etudiant-enit.utm.tn</a>
+              <a href="https://github.com/LouayHM3" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:underline"><Github className="h-4 w-4" /> GitHub</a>
+              <a href="https://www.linkedin.com/in/louay-hammoudi-959845332/" target="_blank" rel="noopener" className="inline-flex items-center gap-2 hover:underline"><Linkedin className="h-4 w-4" /> LinkedIn</a>
             </div>
           </div>
 
@@ -77,7 +77,7 @@ export function Contact() {
       {/* ground pour + footer */}
       <div className="h-6 bg-[repeating-linear-gradient(45deg,color-mix(in_srgb,var(--on-signal)_55%,transparent)_0_1px,transparent_1px_9px)]" />
       <div className="flex flex-col gap-2 border-t border-ink px-6 py-5 md:flex-row md:justify-between md:px-14">
-        <span className="silk !text-ink">© {new Date().getFullYear()} Omar Alibi · Tunis, TN</span>
+        <span className="silk !text-ink">© {new Date().getFullYear()} Louay Hammoudi · Tunis, TN</span>
         <span className="silk !text-ink">All rights reserved</span>
       </div>
     </section>

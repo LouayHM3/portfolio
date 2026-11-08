@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://omaralibi.tn
+Host: https://louayhm3.github.io
 
 # Sitemaps
-Sitemap: https://omaralibi.tn/sitemap.xml
+Sitemap: https://louayhm3.github.io/sitemap.xml

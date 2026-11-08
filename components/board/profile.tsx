@@ -9,46 +9,48 @@ gsap.registerPlugin(ScrollTrigger)
 
 const eng = (data as any).engineer
 const banks: { title: string; items: string[] }[] = [
-  { title: "Programming languages", items: ["C", "C++", "Python", "Dart", "JavaScript", "SQL", "Rust", "VHDL"] },
-  { title: "Embedded systems", items: ["STM32", "ESP8266", "ESP32", "nRF52", "Arduino", "FreeRTOS", "Raspberry Pi", "Jetson Nano"] },
-  { title: "Electronics & hardware", items: ["PCB design", "Eagle", "Altium Designer", "PSpice", "LTspice", "PSIM", "Cadence", "Vivado"] },
-  { title: "Industrial protocols", items: ["M-Bus", "MQTT", "Modbus", "UART", "SPI", "I2C", "CAN", "HTTP/HTTPS"] },
-  { title: "Software development", items: ["React", "Next.js", "Node.js", "Flutter", "Firebase", "ThingsBoard", "Grafana", "Node-RED"] },
-  { title: "Testing & debugging", items: ["Nordic PPK2", "SEGGER J-Link", "Serial diagnostics", "QuestaSim", "ModelSim", "MATLAB"] },
-  { title: "Development tools", items: ["Git", "GitHub", "Docker", "Linux", "STM32CubeIDE", "STM32CubeMX", "xPack RISC-V"] },
+  { title: "Programming", items: ["Python", "C++20", "C", "JavaScript", "C#", "Java", "SQL", "Solidity"] },
+  { title: "AI & GenAI", items: ["RAG", "LLMs", "PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "ONNX", "OpenCV"] },
+  { title: "Cybersecurity", items: ["ModSecurity", "Zeek", "Suricata", "MITRE ATT&CK", "SIEM", "Pentesting", "Secure RAG", "CTF"] },
+  { title: "Cloud & DevSecOps", items: ["AWS", "Docker", "Kubernetes", "OpenSearch", "Trivy", "Falco", "OPA", "Grafana"] },
+  { title: "Networks & systems", items: ["TCP/IP", "Routing", "Linux", "SDN", "IP/MPLS", "NetEm", "TBF", "MQTT"] },
+  { title: "Engineering", items: ["CMake", "Eigen", "NumPy", "SciPy", "Streamlit", "PostgreSQL", "MongoDB", "Git"] },
+  { title: "Enterprise & agents", items: ["MCP", "AutoGen", "CrewAI", "SAP Clean Core", "ABAP RAP", "CDS Views", "OData", "Fiori"] },
 ]
 const pinCount = banks.reduce((a, b) => a + b.items.length, 0)
 const projectCount = eng.projects.length
 
-const statement = "I work across hardware prototypes, embedded firmware, test tooling and industrial IoT dashboards. This portfolio separates implemented work, prototypes and confidential scope."
+const statement = "I build AI-assisted security systems, cloud-native infrastructure and reproducible engineering tools across cybersecurity, networked systems and reliable automation, with hands-on experience in C++ and applied AI."
 
 const education = [
-  { addr: "0x2026", name: "Electrical Engineering", org: "National Engineering School of Tunis (ENIT)", span: "2023 – 2026", status: "Graduated", logo: true },
-  { addr: "0x2023", name: "Preparatory Cycle", org: "Preparatory Institute for Engineering Studies, El Manar", span: "2023", status: "" },
-  { addr: "0x2021", name: "Baccalauréat, Technical Sciences", org: "Grade 17.43 / 20", span: "2021", status: "" },
+  { addr: "0x2027", name: "National Engineering Degree in ICT", org: "ENIT · Telecommunications & Networks · I3C", span: "2024 – 2027", status: "Final year · In progress", logo: true },
+  { addr: "0x2027", name: "IST Master's Programme", org: "Concurrent programme · Information Systems and Technology", span: "2026 – 2027", status: "Final year · In progress", logo: false },
+  { addr: "0x2024", name: "Preparatory Programme in Physics & Chemistry", org: "IPEIM · National rank 133 / 1750", span: "2022 – 2024", status: "" },
+  { addr: "0x2021", name: "Tunisian Baccalaureate, Experimental Sciences", org: "17.53 / 20 · First Class Honours", span: "2021", status: "" },
 ]
 const internships = [
-  { when: "2026", role: "End-of-Studies Engineering Intern", org: "IoT Solutions Ltd · Malta", note: "Industrial IoT energy monitoring", tag: "Final-year project", logo: "/logos/iotsolutions.png", w: 250, h: 252, invert: false },
-  { when: "2025", role: "Embedded & IoT Engineering Intern", org: "OnWireWay", note: "IoT firmware & mobile app", tag: "", logo: "/logos/onwireway.png", w: 100, h: 284, invert: false },
-  { when: "2024", role: "Technical Intern, Power Systems", org: "STEG", note: "Power systems observation & industrial operations", tag: "", logo: "/logos/steg.png", w: 128, h: 284, invert: false },
+  { when: "2026", role: "AI & Enterprise Software Intern", org: "AYMAX · Tunis", note: "VS Code multi-agent assistant for SAP modernization", tag: "Agentic AI", image: "/internships/aymax.jpg" },
+  { when: "2025–26", role: "AI & Cybersecurity Intern", org: "Sopra Steria · Tunis", note: "NovaGuard AI for WAF monitoring and RAG", tag: "Security AI", image: "/internships/sopra-steria.jpg" },
+  { when: "2025", role: "Digital Transformation Intern", org: "SORECI · Tunis", note: "Network, systems and AWS cloud migration", tag: "", image: "/internships/soreci.jpg" },
+  { when: "2025", role: "Web Developer & AI Tools Engineer", org: "Louati Construction · Remote", note: "Real-time project tracking and risk analysis", tag: "", image: "/internships/louati-construction.jpg" },
+  { when: "2024–now", role: "Web Developer", org: "ENIT Junior Enterprise · Tunis", note: "Next.js websites, tools, backend logic and APIs", tag: "", image: "" },
 ]
 const languages = [
   { name: "Arabic", level: "Native" },
-  { name: "English", level: "B2 · Upper-intermediate" },
-  { name: "French", level: "B2 · Upper-intermediate" },
+  { name: "French", level: "C1 · Advanced" },
+  { name: "English", level: "C1 · Advanced" },
+  { name: "German", level: "A2 · Basic" },
 ]
 const leadership = [
-  { when: "2024", org: "ASHE", role: "Founder & Manager" },
-  { when: "2025", org: "Securinets ENIT", role: "Founding Member" },
-  { when: "2023–2025", org: "ENIT Junior Enterprise", role: "Online Mission Head" },
-  { when: "2023–2025", org: "Fablab ENIT", role: "Senior Member" },
-  { when: "2024", org: "INJAZ Company Program · Econics", role: "Marketing Manager" },
+  { when: "2×", org: "Tunisian National Taekwondo", role: "Champion · Former national-team member" },
+  { when: "2025–now", org: "Securinets Club", role: "CTF organization and security training" },
+  { when: "2024–now", org: "ENIT", role: "Linux and exploit-development activities" },
 ]
 
 const modules = [
   { id: "core", ref: "U1", label: "CORE", sub: "Who I am", diag: ["OA-2026", "@ 100 MHz"] },
   { id: "io", ref: "U2", label: "I/O", sub: "Core technical skills", diag: [`${banks.length} banks`, `${pinCount} pins`] },
-  { id: "mem", ref: "U3", label: "MEMORY", sub: "Academic background", diag: ["0x2026 ENIT", "✓ programmed"] },
+  { id: "mem", ref: "U3", label: "MEMORY", sub: "Academic background", diag: ["0x2027 ENIT", "✓ in progress"] },
   { id: "log", ref: "U4", label: "LOG", sub: "Internships", diag: [`${internships.length} internships`, "boot: OK"] },
   { id: "aux", ref: "U5", label: "AUX", sub: "Leadership & languages", diag: [`${leadership.length} roles`, `${languages.length} langs`] },
 ]
@@ -57,7 +59,7 @@ const modules = [
 const Y = [60, 155, 250, 345, 440] // block centre-y in viewBox
 function Diagram({ active }: { active: number }) {
   return (
-    <svg viewBox="0 0 390 500" className="h-full w-full" role="img" aria-label="Block diagram of Omar's profile: core, I/O, memory, internship log and aux connected by a bus">
+    <svg viewBox="0 0 390 500" className="h-full w-full" role="img" aria-label="Block diagram of Louay's profile: core, I/O, memory, internship log and aux connected by a bus">
       {/* bus */}
       <line x1="195" y1="16" x2="195" y2="484" stroke="var(--trace)" strokeWidth="6" />
       <line x1="195" y1="16" x2="195" y2="484" stroke="var(--gold)" strokeOpacity=".35" strokeWidth="1" strokeDasharray="2 8" />
@@ -187,11 +189,11 @@ export function Profile() {
                   <span className="silk">Addr</span><span className="silk">Region</span><span className="silk text-right">Span</span>
                 </div>
                 {education.map((e, i) => (
-                  <div key={e.addr} className="sr grid grid-cols-[4.5rem_1fr] gap-x-6 gap-y-1 border-b border-border py-7 last:border-b-0 md:grid-cols-[6rem_1fr_9rem]" style={{ ["--d" as any]: `${i * 0.08}s` }}>
+                  <div key={`${e.addr}-${i}`} className="sr grid grid-cols-[4.5rem_minmax(0,1fr)] gap-x-4 gap-y-1 border-b border-border py-7 last:border-b-0 md:grid-cols-[6rem_minmax(0,1fr)_9rem] md:gap-x-6" style={{ ["--d" as any]: `${i * 0.08}s` }}>
                     <span className="font-mono text-sm text-gold">{e.addr}</span>
-                    <div className="flex items-start gap-5">
+                    <div className="flex min-w-0 items-start gap-3 sm:gap-5">
                       {e.logo ? <Image src="/enit.png" alt="ENIT" width={64} height={64} className="hidden h-14 w-14 shrink-0 object-contain sm:block" /> : <span aria-hidden className="hidden h-14 w-14 shrink-0 sm:block" />}
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-2xl font-semibold leading-tight tracking-tight md:text-[1.75rem]">{e.name}</p>
                         <p className="mt-1 text-sm text-dim">{e.org}</p>
                       </div>
@@ -211,10 +213,12 @@ export function Profile() {
               <ul className="space-y-5">
                 {internships.map((x, i) => (
                   <li key={x.org} className="sr bracket grid overflow-hidden border border-border bg-sub-2 md:grid-cols-[14rem_1fr]" style={{ ["--d" as any]: `${i * 0.08}s` }}>
-                    {/* logo tile: light "label" so every logo reads, whatever its colours */}
-                    <div className="grid h-28 place-items-center p-5 md:h-auto md:min-h-[8.5rem]">
-                      <Image src={x.logo} alt={`${x.org} logo`} width={x.w} height={x.h}
-                        className={`h-auto w-auto max-h-[4.5rem] max-w-full object-contain ${x.invert ? "brightness-0" : ""}`} />
+                    <div className="relative h-40 overflow-hidden bg-sub md:h-auto md:min-h-[8.5rem]">
+                      {x.image ? (
+                        <Image src={x.image} alt={`${x.org} internship visual`} fill sizes="(min-width: 768px) 224px, 100vw" quality={90} className="object-cover transition duration-500 hover:scale-105" />
+                      ) : (
+                        <div className="grid h-full place-items-center bg-[radial-gradient(circle_at_50%_30%,rgba(0,255,157,.16),transparent_55%)] font-mono text-[10px] uppercase tracking-[.2em] text-dim">ENIT · WEB SYSTEMS</div>
+                      )}
                     </div>
                     <div className="flex flex-col justify-between gap-5 p-6 md:p-7">
                       <div className="flex flex-wrap items-center justify-between gap-x-6 gap-y-2">
@@ -253,7 +257,7 @@ export function Profile() {
                   ))}
                 </p>
 
-                <p className="sr mt-6"><span className="text-dim">[ NOW  ]</span> <span className="text-signal">..</span> <span className="caret text-silk">Fresh graduate, open to work</span></p>
+                <p className="sr mt-6"><span className="text-dim">[ NOW  ]</span> <span className="text-signal">..</span> <span className="caret text-silk">Final-year dual-program student, seeking an internship</span></p>
               </div>
             </article>
 

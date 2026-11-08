@@ -1,0 +1,6 @@
+﻿<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+<defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#07130f"/><stop offset="1" stop-color="#10251d"/></linearGradient><pattern id="p" width="48" height="48" patternUnits="userSpaceOnUse"><path d="M48 0H0V48" fill="none" stroke="#76e6b5" stroke-opacity=".08"/></pattern></defs>
+<rect width="1200" height="760" fill="url(#g)"/><rect width="1200" height="760" fill="url(#p)"/>
+<path d="M0 620H1200M80 0V760M1120 0V760" stroke="#c4a7e7" stroke-opacity=".28"/><circle cx="930" cy="260" r="190" fill="none" stroke="#c4a7e7" stroke-opacity=".22" stroke-width="2"/><circle cx="930" cy="260" r="115" fill="none" stroke="#c4a7e7" stroke-opacity=".42" stroke-width="2"/><path d="M720 260h420M930 50v420" stroke="#c4a7e7" stroke-opacity=".22"/>
+<text x="80" y="100" fill="#c4a7e7" font-family="monospace" font-size="22" letter-spacing="6">PROJECT VISUAL // 2026</text><text x="80" y="430" fill="#edf5ef" font-family="Arial,sans-serif" font-size="62" font-weight="700">ROBSIM V&V</text><text x="84" y="485" fill="#9bb1a5" font-family="monospace" font-size="25" letter-spacing="4">C++20 / SiL</text><rect x="80" y="560" width="280" height="5" fill="#c4a7e7"/><text x="80" y="635" fill="#718a7d" font-family="monospace" font-size="18">LOUAY HAMMOUDI / ENGINEERING LAB</text>
+</svg>

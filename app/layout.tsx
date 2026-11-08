@@ -7,33 +7,31 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Omar Alibi — Embedded Systems & IoT Engineer",
-    template: "%s | Omar Alibi",
+    default: "Louay Hammoudi — AI, Cybersecurity & Cloud",
+    template: "%s | Louay Hammoudi",
   },
-  description: "Omar Alibi is an Electrical Engineering graduate from ENIT documenting embedded firmware, hardware prototypes, industrial IoT and engineering software projects.",
+  description: "Louay Hammoudi is a final-year ENIT Telecommunications and Networks Engineering student completing a concurrent IST Master's programme while building AI-driven security, data, cloud and reliable C++ networked systems.",
   keywords: [
-    "Omar Alibi", "Embedded Systems Engineer", "Embedded Firmware Engineer", "IoT Engineer",
-    "Edge AI Engineer", "RISC-V Engineer", "Firmware Developer", "Industrial IoT",
-    "Real-Time Embedded Systems", "PCB Design", "STM32 Firmware", "ESP8266 Firmware",
-    "FreeRTOS", "M-Bus", "MQTT", "FPGA Design", "Embedded Machine Learning",
-    "Industrial Energy Monitoring", "Electrical Engineering Graduate", "ENIT",
+    "Louay Hammoudi", "Telecommunications Engineering", "Network Security", "AI Engineer",
+    "Cybersecurity", "Cloud Security", "RAG", "Agentic AI", "AWS", "Kubernetes",
+    "ModSecurity", "SOC", "WAF", "C++20", "Python", "Medical AI", "ONNX", "OpenCV", "SRE", "ENIT",
   ],
-  authors: [{ name: "Omar Alibi", url: "https://omaralibi.tn" }],
-  creator: "Omar Alibi",
-  publisher: "Omar Alibi",
+  authors: [{ name: "Louay Hammoudi", url: "https://github.com/LouayHM3" }],
+  creator: "Louay Hammoudi",
+  publisher: "Louay Hammoudi",
   formatDetection: { email: true, address: false, telephone: true },
-  metadataBase: new URL("https://omaralibi.tn"),
-  alternates: { canonical: "https://omaralibi.tn/" },
+  metadataBase: new URL("https://github.com/LouayHM3"),
+  alternates: { canonical: "https://github.com/LouayHM3" },
   openGraph: {
     type: "website",
     locale: "en_US",
-    url: "https://omaralibi.tn/",
-    title: "Omar Alibi — Embedded Systems & IoT Engineer",
-    description: "Electrical Engineering graduate documenting embedded firmware, hardware prototypes, edge-AI systems and industrial IoT projects.",
-    siteName: "Omar Alibi",
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Omar Alibi — Embedded Systems and IoT Engineer" }],
+    url: "https://github.com/LouayHM3",
+    title: "Louay Hammoudi — AI, Cybersecurity & Cloud",
+    description: "AI-driven security, data, cloud and reliable networked software by Louay Hammoudi, a final-year dual-program engineering and IST Master's student.",
+    siteName: "Louay Hammoudi",
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Louay Hammoudi — AI, Cybersecurity and Cloud" }],
   },
-  twitter: { card: "summary_large_image", title: "Omar Alibi — Embedded Systems & IoT Engineer", description: "Embedded firmware, edge AI and industrial IoT projects from Omar Alibi.", images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title: "Louay Hammoudi — AI, Cybersecurity & Cloud", description: "AI security, cloud and networked systems projects from Louay Hammoudi.", images: ["/og-image.png"] },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, "max-video-preview": -1, "max-image-preview": "large", "max-snippet": -1 } },
   icons: { icon: [{ url: "/logo.ico", sizes: "16x16", type: "image/png" }, { url: "/logo.ico", sizes: "32x32", type: "image/png" }, { url: "/logo.ico" }], apple: [{ url: "/logo.ico", sizes: "180x180", type: "image/png" }] },
   category: "technology",
@@ -47,16 +45,16 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Person",
-    name: "Omar Alibi",
-    jobTitle: "Embedded Systems and IoT Engineer",
-    description: "Electrical Engineering graduate documenting embedded firmware, hardware prototypes, edge-AI systems and industrial IoT projects.",
-    url: "https://omaralibi.tn",
+    name: "Louay Hammoudi",
+    jobTitle: "Telecommunications and Networks Engineering Student",
+    description: "Telecommunications and Networks Engineering student building AI-driven security, cloud-native systems and reliable networked software.",
+    url: "https://github.com/LouayHM3",
     alumniOf: { "@type": "EducationalOrganization", name: "École Nationale d'Ingénieurs de Tunis", alternateName: "National Engineering School of Tunis" },
-    sameAs: ["https://github.com/alibiomar", "https://www.linkedin.com/in/omar-alibi/"],
-    knowsAbout: ["Embedded Systems", "Embedded Firmware", "IoT Systems", "Edge AI", "Industrial Automation", "RISC-V", "PCB Design", "Real-time Systems", "STM32", "ESP8266", "FreeRTOS", "MQTT", "M-Bus", "Python", "C", "C++", "Rust", "FPGA Design", "ThingsBoard"],
-    seeks: ["Embedded Systems Engineer", "Firmware Engineer", "IoT Engineer", "Test Automation Engineer"],
+    sameAs: ["https://github.com/LouayHM3", "https://www.linkedin.com/in/louay-hammoudi-959845332/", "https://www.credly.com/earner/dashboard/home"],
+    knowsAbout: ["C++20", "Medical AI", "ONNX", "OpenCV", "Cybersecurity", "AI Security", "RAG", "Agentic AI", "Cloud Security", "Kubernetes", "AWS", "ModSecurity", "WAF", "SOC", "Python", "SRE", "Network Systems"],
+    seeks: ["Engineering Intern", "AI Security Intern", "Data Engineering Intern", "C++ Engineering Intern", "Cybersecurity Intern", "Research Intern"],
     serviceArea: { "@type": "Place", name: "Tunisia", additionalProperty: "Open to relocation and remote engineering roles" },
-    hasOccupation: { "@type": "Occupation", name: "Embedded Systems Engineer", occupationLocation: { "@type": "Country", name: "Tunisia" }, skills: "Firmware, IoT, edge AI, RISC-V, PCB design" },
+    hasOccupation: { "@type": "Occupation", name: "Telecommunications and Networks Engineering Student", occupationLocation: { "@type": "Country", name: "Tunisia" }, skills: "AI security, cloud, cybersecurity, networked systems, RAG" },
   };
 
   return (
@@ -67,7 +65,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         <meta name="theme-color" content="#050d0a" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
-        <meta name="application-name" content="Omar Alibi Portfolio" />
+        <meta name="application-name" content="Louay Hammoudi Portfolio" />
         <meta name="mobile-web-app-capable" content="yes" />
       </head>
       <body className={`${GeistSans.variable} ${GeistMono.variable} font-sans antialiased`}>

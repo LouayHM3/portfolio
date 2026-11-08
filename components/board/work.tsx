@@ -55,7 +55,7 @@ export function Work() {
             <p className="silk">(02) Selected work</p>
             <h2 className="display mt-4 text-[clamp(2.6rem,7vw,6.5rem)]">The lab <span className="text-signal">bench</span></h2>
           </div>
-          <p className="silk max-w-sm lg:text-right">{projects.length} projects, from RISC-V silicon and PCB layout to edge-AI firmware and cloud dashboards. Open any project for its datasheet.</p>
+          <p className="silk max-w-sm lg:text-right">{projects.length} projects, spanning AI security, cloud infrastructure, networked systems, applied AI and C++ engineering. Open any project for its datasheet.</p>
         </div>
 
         <div className="mb-8 flex flex-wrap gap-2" aria-label="Filter projects by category">
@@ -84,13 +84,16 @@ export function Work() {
 
                   <div className={`grid md:grid-cols-12 ${flip ? "" : ""}`}>
                     <button data-hot ref={(el) => { triggerRefs.current[i] = el }} onClick={() => setOpen(i)} aria-label={`Open datasheet: ${main}`}
-                      className={`group relative block aspect-[16/10] overflow-hidden bg-sub md:col-span-6 md:aspect-auto md:min-h-[400px] ${flip ? "md:order-2" : ""}`}>
-                      <Image src={pr.image} alt={main} fill sizes="(min-width:768px) 50vw, 100vw" className="object-cover saturate-[.85] transition duration-700 group-hover:scale-[1.04] group-hover:saturate-100" />
+                      className={`group relative block aspect-[16/10] overflow-hidden bg-sub md:col-span-5 md:aspect-[4/3] md:min-h-[300px] ${flip ? "md:order-2" : ""}`}>
+                      <Image src={pr.image} alt={main} fill sizes="(min-width:768px) 50vw, 100vw" quality={90} className="object-cover saturate-[.85] transition duration-700 group-hover:scale-[1.04] group-hover:saturate-100" />
+                      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(5,13,10,.08),rgba(5,13,10,.28)),radial-gradient(circle_at_78%_22%,rgba(118,230,181,.16),transparent_34%)] mix-blend-screen" />
+                      <div className="pointer-events-none absolute inset-3 border border-white/10 opacity-70 transition duration-500 group-hover:border-signal/40" />
+                      <div className="pointer-events-none absolute inset-0 opacity-30 [background-image:linear-gradient(rgba(118,230,181,.12)_1px,transparent_1px),linear-gradient(90deg,rgba(118,230,181,.12)_1px,transparent_1px)] [background-size:48px_48px] [mask-image:linear-gradient(to_bottom,transparent,black_35%,transparent)]" />
                       <div className="pour absolute inset-x-0 bottom-0 h-2 opacity-70" />
                       <span className="absolute bottom-5 left-5 flex items-center gap-2 bg-signal px-4 py-2.5 font-mono text-[11px] font-semibold uppercase tracking-[.14em] text-on-signal opacity-0 transition-opacity group-hover:opacity-100">Open datasheet <ArrowUpRight className="h-3.5 w-3.5" /></span>
                     </button>
 
-                    <div className="flex flex-col justify-between gap-8 p-6 md:col-span-6 md:p-10">
+                    <div className="flex flex-col justify-between gap-8 p-6 md:col-span-7 md:p-10">
                       <div>
                         <p className="font-mono text-6xl font-semibold leading-none text-trace md:text-8xl">{String(i + 1).padStart(2, "0")}</p>
                         <h3 className="mt-6 text-[clamp(1.6rem,2.6vw,2.6rem)] font-semibold leading-[1.02] tracking-[-0.04em]">{main}</h3>
@@ -128,7 +131,9 @@ export function Work() {
                 <button ref={closeRef} onClick={() => setOpen(null)} aria-label="Close datasheet" className="grid h-9 w-9 place-items-center border border-border hover:border-signal hover:text-signal"><X className="h-4 w-4" /></button>
               </div>
               <div className="relative aspect-[16/9] w-full bg-sub">
-                <Image src={p.image} alt={p.title} fill sizes="720px" className="object-cover" />
+                <Image src={p.image} alt={p.title} fill sizes="720px" quality={90} className="object-cover" />
+                <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(135deg,rgba(5,13,10,.04),rgba(5,13,10,.2)),radial-gradient(circle_at_78%_22%,rgba(118,230,181,.14),transparent_34%)] mix-blend-screen" />
+                <div className="pointer-events-none absolute inset-5 border border-white/10" />
               </div>
               <div className="space-y-10 p-6 md:p-10">
                 <div>

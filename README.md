@@ -1,22 +1,25 @@
-# Omar Alibi — Engineering Portfolio
+# Louay Hammoudi — AI, Cybersecurity & Cloud Portfolio
 
-Personal portfolio for Omar Alibi, an Electrical Engineering graduate focused on embedded systems, firmware, electronics prototyping, software tooling, and industrial IoT.
+Personal portfolio for Louay Hammoudi, a Telecommunications and Networks Engineering student focused on AI-driven security, cloud-native systems, networked software, and reliable automation.
 
-Live site: [omaralibi.tn](https://omaralibi.tn)  
-GitHub: [github.com/alibiomar](https://github.com/alibiomar)
+GitHub: [github.com/LouayHM3](https://github.com/LouayHM3)
+LinkedIn: [Louay Hammoudi](https://www.linkedin.com/in/louay-hammoudi-959845332/)
+Credly: [Credly](https://www.credly.com/earner/dashboard/home)
 
 ## What this site communicates
 
 The portfolio is designed as an evidence-first engineering profile rather than a generic project gallery. It presents:
 
-- Embedded firmware and electronics projects
-- Industrial IoT and energy-monitoring work
-- Edge-AI and computer-vision experiments
-- FPGA and RISC-V designs
-- Software, test, and diagnostic tooling
+- AI-driven cybersecurity and RAG systems
+- Cloud-native security and DevSecOps projects
+- Network experimentation and SOC tooling
+- C++ algorithms, simulation and applied AI engineering
+- Selected medical AI and signal-processing work
+- Robotics simulation and software verification
+- Privacy-aware access control and applied ML
 - Education, internships, technical skills, CV downloads, and contact information
 
-Project descriptions distinguish between implemented work, prototypes, demonstrated functionality, confidential production artifacts, and future improvements.
+Project descriptions distinguish between implemented work, prototypes, demonstrated functionality, confidential production artifacts, and future improvements. Repository links are copied from the CV when available.
 
 ## Technology
 
@@ -62,7 +65,7 @@ public/
 
 ### Hero
 
-Introduces Omar as an engineer working across embedded systems, firmware, hardware prototypes, and industrial IoT. It includes links to selected work, CV downloads, GitHub, LinkedIn, and email.
+Introduces Louay as an engineering student working across AI security, cloud, networked systems, and reliable automation. It includes links to selected work, the CV, GitHub, LinkedIn, and email.
 
 ### Profile
 
@@ -84,7 +87,7 @@ Projects are filterable by category and open in an accessible datasheet drawer. 
 - Source repository links
 - Limitations and scope notes
 
-The final-year project includes additional case-study material covering ThingsBoard dashboards, machine-state detection, M-Bus hardware and firmware prototyping, and the PySide6 end-of-line tester.
+Projects cover WAF monitoring, RAG and agentic assistants, cloud-native security, network IDS, robotics V&V, reinforcement learning, and privacy-aware systems.
 
 ### Contact
 
